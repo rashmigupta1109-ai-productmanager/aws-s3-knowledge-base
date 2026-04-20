@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AWS S3 Knowledge Base</title>
+  <title>AssetMark Knowledge Base — AI Prototype</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,8 +12,7 @@
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="logo">
-        <span class="logo-icon">&#x1F4DA;</span>
-        <span class="logo-text">S3 Knowledge Base</span>
+        <span class="logo-text">AssetMark KB</span>
       </div>
       <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">&#x2715;</button>
     </div>
@@ -77,22 +76,25 @@
     <header class="topbar">
       <button class="btn-icon topbar-menu" id="openSidebar" title="Open sidebar">&#x2630;</button>
       <div class="topbar-title">
-        <span>AWS S3 Knowledge Base</span>
-        <span class="topbar-sub">Powered by OpenAI + ChromaDB + Amazon S3</span>
+        <span>AssetMark Knowledge Base</span>
+        <span class="topbar-sub">Knowledge retrieval system for advisor workflows (Simulated Domain Data)</span>
       </div>
       <button class="btn-icon" id="clearChatBtn" title="Clear conversation">&#x1F5D1;</button>
     </header>
 
     <section class="messages" id="messages">
       <div class="welcome">
-        <div class="welcome-icon">&#x1F916;</div>
-        <h2>Hello! Ask me about your S3 documents.</h2>
-        <p>Browse your S3 bucket in the sidebar, select files to ingest,<br/>
-           then ask me anything about their contents.</p>
-        <div class="welcome-chips">
-          <button class="chip" onclick="insertChip('What documents are in the knowledge base?')">What documents are loaded?</button>
-          <button class="chip" onclick="insertChip('Summarise the key points.')">Summarise key points</button>
-          <button class="chip" onclick="insertChip('What are the main topics covered?')">Main topics covered</button>
+        <div class="welcome-hero">
+          <span class="welcome-eyebrow">Knowledge Base</span>
+          <h2>Intelligent answers from your advisor documents</h2>
+          <p>Connect your S3 bucket, ingest documents, and get instant, cited answers — built for financial advisors who move fast.</p>
+        </div>
+        <div class="welcome-body">
+          <p>Select files from your S3 bucket in the sidebar to get started, then ask anything about their contents.</p>
+          <div class="welcome-chips">
+            <button class="chip" onclick="insertChip('Summarise the key points.')">Summarise key points</button>
+            <button class="chip" onclick="insertChip('What are the main topics covered?')">Main topics covered</button>
+          </div>
         </div>
       </div>
     </section>
@@ -115,6 +117,7 @@
         </button>
       </div>
       <p class="input-hint">Press <kbd>Enter</kbd> to send &middot; <kbd>Shift+Enter</kbd> for new line</p>
+      <p class="disclaimer">For showcase — this is simulated using public AssetMark data for demo purposes only. Built using publicly available AssetMark sources.</p>
     </footer>
 
   </main>

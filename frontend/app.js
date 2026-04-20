@@ -458,14 +458,17 @@ clearChatBtn.addEventListener("click", async () => {
 function resetChatUI() {
   messagesEl.innerHTML = `
     <div class="welcome">
-      <div class="welcome-icon">🤖</div>
-      <h2>Hello! Ask me about your S3 documents.</h2>
-      <p>Browse your S3 bucket in the sidebar, select files to ingest,<br/>
-         then ask me anything about their contents.</p>
-      <div class="welcome-chips">
-        <button class="chip" onclick="insertChip('What documents are in the knowledge base?')">What documents are loaded?</button>
-        <button class="chip" onclick="insertChip('Summarise the key points.')">Summarise key points</button>
-        <button class="chip" onclick="insertChip('What are the main topics covered?')">Main topics covered</button>
+      <div class="welcome-hero">
+        <span class="welcome-eyebrow">Knowledge Base</span>
+        <h2>Intelligent answers from your advisor documents</h2>
+        <p>Connect your S3 bucket, ingest documents, and get instant, cited answers — built for financial advisors who move fast.</p>
+      </div>
+      <div class="welcome-body">
+        <p>Select files from your S3 bucket in the sidebar to get started, then ask anything about their contents.</p>
+        <div class="welcome-chips">
+          <button class="chip" onclick="insertChip('Summarise the key points.')">Summarise key points</button>
+          <button class="chip" onclick="insertChip('What are the main topics covered?')">Main topics covered</button>
+        </div>
       </div>
     </div>`;
 }

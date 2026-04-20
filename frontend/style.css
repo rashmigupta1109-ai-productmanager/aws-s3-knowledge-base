@@ -1,42 +1,46 @@
 /* ============================================================
    AWS S3 Knowledge Base — Stylesheet
-   Theme: LinkedIn brand identity
-   LinkedIn palette:
-     Primary blue   #0A66C2
-     Dark navy      #1D2226  (sidebar)
-     Background     #F3F2EF  (main bg)
+   Theme: AssetMark brand identity
+   AssetMark palette:
+     Primary navy   #1A2B4A  (sidebar, footer, hero)
+     Navy light     #243352  (sidebar hover)
+     Teal           #00A89C  (logo accent, success)
+     Gold           #E8961A  (primary CTA buttons)
+     Gold dark      #C97D10  (button hover)
+     Background     #F4F7FA  (main bg)
      Card white     #FFFFFF
-     Text primary   #000000 / #1D2226
-     Text muted     #666666
-     Border         #E0DFDC
-     Hover blue     #004182
-     Button hover   rgba(10,102,194,.1)
+     Text primary   #1A2B4A
+     Text muted     #6B7280
+     Border         #DDE4ED
    ============================================================ */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg-sidebar:    #1D2226;
-  --bg-sidebar-s:  #272B2F;
-  --bg-main:       #F3F2EF;
+  --bg-sidebar:    #1c4a7a;
+  --bg-sidebar-s:  #2c5b8a;
+  --bg-main:       #F4F7FA;
   --bg-white:      #FFFFFF;
-  --bg-user-msg:   #0A66C2;
+  --bg-user-msg:   #1c4a7a;
   --bg-ai-msg:     #FFFFFF;
-  --bg-chip:       #EAF0FB;
+  --bg-chip:       #e8f2fb;
 
-  --text-primary:  #1D2226;
-  --text-muted:    #666666;
-  --text-sidebar:  #B0B7BF;
-  --text-sidebar-m:#6B7280;
+  --text-primary:  #000000;
+  --text-muted:    #6B7280;
+  --text-sidebar:  #c8d8ea;
+  --text-sidebar-m:#8aaabf;
 
-  --border:        #E0DFDC;
-  --border-dark:   #2F3437;
+  --border:        #DDE4ED;
+  --border-dark:   #1a4070;
 
-  --accent:        #0A66C2;
-  --accent-hover:  #004182;
-  --accent-light:  #EAF0FB;
+  --accent:        #add8e6;
+  --accent-hover:  #89c4d8;
+  --accent-light:  #e8f4f8;
 
-  --success:       #057642;
+  --teal:          #add8e6;
+  --teal-light:    #e8f4f8;
+
+  --success:       #00A89C;
   --error:         #CC1016;
   --warning:       #E16B16;
 
@@ -170,7 +174,7 @@ body { display: flex; height: 100vh; }
   transition: border-color .2s;
 }
 .prefix-input::placeholder { color: var(--text-sidebar-m); }
-.prefix-input:focus { border-color: var(--accent); }
+.prefix-input:focus { border-color: var(--teal); }
 
 /* File list */
 .file-list {
@@ -204,7 +208,7 @@ body { display: flex; height: 100vh; }
   color: var(--text-sidebar);
 }
 .file-item:hover { background: var(--bg-sidebar-s); }
-.file-item.selected { background: rgba(10,102,194,.18); }
+.file-item.selected { background: rgba(0,168,156,.18); }
 .file-item.ingested { opacity: .55; }
 
 .file-item input[type="checkbox"] {
@@ -351,26 +355,72 @@ body { display: flex; height: 100vh; }
   justify-content: center;
   flex: 1;
   text-align: center;
-  padding: 40px 24px;
+  padding: 0;
+  gap: 0;
+  background: var(--bg-main);
+}
+
+.welcome-hero {
+  width: 100%;
+  background: linear-gradient(135deg, #ddeaf7 0%, #c8dcf0 60%, #ddeaf7 100%);
+  padding: 52px 40px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.welcome-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #1c4a7a;
+}
+
+.welcome h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.3;
+  max-width: 520px;
+}
+
+.welcome-hero p {
+  font-size: 15px;
+  color: #1a1a1a;
+  line-height: 1.7;
+  max-width: 460px;
+}
+
+.welcome-body {
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 14px;
 }
-.welcome-icon { font-size: 54px; line-height: 1; }
-.welcome h2 { font-size: 22px; font-weight: 700; }
-.welcome p  { font-size: 15px; color: var(--text-muted); line-height: 1.65; max-width: 440px; }
 
-.welcome-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 4px; }
+.welcome-body p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 440px;
+}
+
+.welcome-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 
 .chip {
   background: var(--bg-white);
-  color: var(--accent);
-  border: 1px solid var(--accent);
+  color: #1c4a7a;
+  border: 1.5px solid #1c4a7a;
   border-radius: 20px;
   padding: 6px 16px;
   font-size: 13px;
   cursor: pointer;
-  transition: background .15s, transform .1s;
+  transition: background .15s, color .15s, transform .1s;
 }
-.chip:hover { background: var(--accent-light); transform: translateY(-1px); }
+.chip:hover { background: #1c4a7a; color: #fff; transform: translateY(-1px); }
 
 /* Bubbles */
 .message-row {
@@ -411,8 +461,8 @@ body { display: flex; height: 100vh; }
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: var(--accent-light);
-  color: var(--accent);
+  background: #e8f4f8;
+  color: #041f41;
   border-radius: var(--radius-sm);
   padding: 3px 8px;
   font-size: 11px;
@@ -423,7 +473,7 @@ body { display: flex; height: 100vh; }
 .avatar {
   width: 32px; height: 32px;
   border-radius: 50%;
-  background: var(--accent);
+  background: #add8e6;
   display: flex; align-items: center; justify-content: center;
   font-size: 15px;
   color: #fff;
@@ -466,8 +516,8 @@ body { display: flex; height: 100vh; }
   transition: border-color .2s, box-shadow .2s;
 }
 .input-wrapper:focus-within {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(10,102,194,.1);
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(0,168,156,.12);
 }
 
 .message-input {
@@ -489,16 +539,24 @@ body { display: flex; height: 100vh; }
   width: 38px; height: 38px;
   border-radius: 50%;
   border: none;
-  background: var(--accent);
+  background: #1c4a7a;
   color: #fff;
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   transition: background .15s, transform .1s;
 }
-.send-btn:hover:not(:disabled) { background: var(--accent-hover); transform: scale(1.05); }
-.send-btn:disabled { background: #9ab8dc; cursor: not-allowed; }
+.send-btn:hover:not(:disabled) { background: #2c5b8a; transform: scale(1.05); }
+.send-btn:disabled { background: #8aaabf; cursor: not-allowed; }
 .send-btn svg { width: 17px; height: 17px; }
+
+.disclaimer {
+  font-size: 10px;
+  color: #9ca3af;
+  text-align: center;
+  margin-top: 6px;
+  line-height: 1.5;
+}
 
 .input-hint { font-size: 11px; color: var(--text-muted); margin-top: 6px; text-align: center; }
 .input-hint kbd {
