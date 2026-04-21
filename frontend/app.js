@@ -6,7 +6,7 @@
  */
 
 //const API_BASE = "http://localhost:8000/api"; {Local Host}
-const API_BASE = "https://aws-s3-knowledge-base.onrender.com"; {Render Deployment}
+const API_BASE = "https://aws-s3-knowledge-base.onrender.com"; // {Render Deployment}
 
 // ---------------------------------------------------------------------------
 // State
