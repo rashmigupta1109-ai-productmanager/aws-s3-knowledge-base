@@ -219,7 +219,7 @@ async function ingest(keys) {
   ingestSelectedBtn.disabled = true;
 
   try {
-    const res  = await fetch(`${API_BASE}/s3/ingest`, {
+    const res  = await fetch(`${API_BASE}/api/s3/ingest`, {
       method:  "POST",
       headers: { "Content-Type": "application/json" },
       body:    JSON.stringify({ keys }),
@@ -260,7 +260,7 @@ refreshDocsBtn.addEventListener("click", loadDocuments);
 
 async function loadDocuments() {
   try {
-    const res  = await fetch(`${API_BASE}/documents`);
+    const res  = await fetch(`${API_BASE}/api/documents`);
     const data = await res.json();
     renderDocList(data.documents || []);
   } catch { /* silent */ }
@@ -287,7 +287,7 @@ function renderDocList(docs) {
 async function deleteDocument(docId) {
   if (!confirm("Remove this document from the knowledge base?")) return;
   try {
-    const res = await fetch(`${API_BASE}/documents/${docId}`, { method: "DELETE" });
+    const res = await fetch(`${API_BASE}/api/documents/${docId}`, { method: "DELETE" });
     if (res.ok) { await loadDocuments(); await loadS3Files(); }
   } catch { alert("Failed to delete document."); }
 }
@@ -297,7 +297,7 @@ clearKbBtn.addEventListener("click", async () => {
   clearKbBtn.disabled = true;
   clearKbBtn.textContent = "Clearing…";
   try {
-    const res  = await fetch(`${API_BASE}/documents`, { method: "DELETE" });
+    const res  = await fetch(`${API_BASE}/api/documents`, { method: "DELETE" });
     const data = await res.json();
     if (res.ok) {
       await loadDocuments();
