@@ -61,6 +61,8 @@ async function checkHealth() {
   try {
     const res  = await fetch(`${API_BASE}/health`);
     const data = await res.json();
+        console.log('API health response:', data); // Adding this line for Log Checks
+
 
     if (data.rag_ready) {
       setStatus("online", "API connected");
@@ -80,6 +82,7 @@ async function checkHealth() {
       s3Timestamp.textContent = "";
     }
   } catch {
+    console.error('API health check error:', error); // Adding this line for Log Checks
     setStatus("offline", "Server offline");
     setS3Status("offline", "Server offline");
     s3Timestamp.textContent = "";
