@@ -37,7 +37,7 @@ app = FastAPI(
 )
 origins = [
     "https://aws-s3-knowledge-base-assetmark-demo.onrender.com",
-    "https://aws-s3-knowledge-base-ui-exp.onrender.com"
+    "https://aws-s3-knowledge-base-ui-exp.onrender.com",
     "http://localhost:3000",  # For local development
 ]
 app.add_middleware(
