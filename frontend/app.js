@@ -5,7 +5,8 @@
  *          RAG chat, KB management, session control.
  */
 
-const API_BASE = "http://localhost:8000/api";
+// const API_BASE = "http://localhost:8000/api"; //local
+const API_BASE = "https://aws-s3-knowledge-base.onrender.com/api"; //render url
 
 // ---------------------------------------------------------------------------
 // State
