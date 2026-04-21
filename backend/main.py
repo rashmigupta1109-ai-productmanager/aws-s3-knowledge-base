@@ -35,10 +35,7 @@ app = FastAPI(
     description="RAG chatbot backed by documents stored in AWS S3",
     version="1.0.0",
 )
-origins = [
-    "https://aws-s3-knowledge-base-assetmark-demo.onrender.com",
-    "http://localhost:3000",  # For local development
-]
+ allow_origins=["*"],
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
