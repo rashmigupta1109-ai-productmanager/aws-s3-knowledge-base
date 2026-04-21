@@ -141,7 +141,7 @@ async function loadS3Files() {
   ingestSelectedBtn.disabled = true;
 
   try {
-    const res  = await fetch(`${API_BASE}/s3/files?prefix=${encodeURIComponent(prefix)}`);
+    const res  = await fetch(`${API_BASE}/api/s3/files?prefix=${encodeURIComponent(prefix)}`);
     const data = await res.json();
     s3Files = data.files || [];
     renderFileList();
@@ -201,7 +201,7 @@ ingestAllBtn.addEventListener("click", async () => {
 
   try {
     const prefix = prefixInput.value.trim();
-    const res    = await fetch(`${API_BASE}/s3/ingest-all?prefix=${encodeURIComponent(prefix)}`, {
+    const res    = await fetch(`${API_BASE}/api/s3/ingest-all?prefix=${encodeURIComponent(prefix)}`, {
       method: "POST",
     });
     const data = await res.json();
