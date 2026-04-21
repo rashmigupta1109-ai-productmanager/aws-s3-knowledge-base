@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function checkHealth() {
   setStatus("loading", "Connecting…");
   try {
-    const res  = await fetch(`${API_BASE}/health`);
+    const res  = await fetch(`${API_BASE}/api/health`);
     const data = await res.json();
         console.log('API health response:', data); // Adding this line for Log Checks
 
