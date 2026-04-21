@@ -22,7 +22,7 @@ let selectedKeys  = new Set();
 const messagesEl       = document.getElementById("messages");
 const messageInput     = document.getElementById("messageInput");
 const sendBtn          = document.getElementById("sendBtn");
-const clearChatBtn     = document.getElementById("clearChatBtn");
+const clearBtn     = document.getElementById("clearChatBtn");
 const statusDot        = document.getElementById("statusDot");
 const statusText       = document.getElementById("statusText");
 const s3Dot            = document.getElementById("s3Dot");
@@ -340,7 +340,7 @@ async function sendMessage() {
   const typingId = showTyping();
 
   try {
-    const res  = await fetch(`${API_BASE}/chat`, {
+    const res  = await fetch(`${API_BASE}/api/chat`, {
       method:  "POST",
       headers: { "Content-Type": "application/json" },
       body:    JSON.stringify({ message: text, session_id: sessionId }),
